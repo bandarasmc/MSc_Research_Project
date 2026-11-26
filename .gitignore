@@ -24,3 +24,6 @@ outputs/model_artifacts/
 Thumbs.db
 
 .cache.sqlite
+
+# Exclude extracted data files
+data/Extracted_Data/

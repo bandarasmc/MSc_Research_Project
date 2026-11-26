@@ -1,0 +1,146 @@
+============================================================
+SPATIAL ADJACENCY GRAPH CONSTRUCTION
+============================================================
+
+[1] Loaded district order: 25 districts
+[2] GeoJSON features: 25
+    CRS: EPSG:4326
+
+[3] GeoJSON id -> district name mapping:
+    LK52    Ampāra                         -> Ampara
+    LK71    Anurādhapura                   -> Anuradhapura
+    LK81    Badulla                        -> Badulla
+    LK51    Maḍakalapuva                   -> Batticaloa
+    LK11    Kŏḷamba                        -> Colombo
+    LK31    Gālla                          -> Galle
+    LK12    Gampaha                        -> Gampaha
+    LK33    Hambantŏṭa                     -> Hambantota
+    LK41    Yāpanaya                       -> Jaffna
+    LK13    Kaḷutara                       -> Kalutara
+    LK21    Mahanuvara                     -> Kandy
+    LK92    Kægalla                        -> Kegalle
+    LK42    Kilinŏchchi                    -> Kilinochchi
+    LK61    Kuruṇægala                     -> Kurunegala
+    LK43    Mannārama                      -> Mannar
+    LK22    Mātale                         -> Matale
+    LK32    Mātara                         -> Matara
+    LK82    Mŏṇarāgala                     -> Monaragala
+    LK45    Mulativ                        -> Mullaitivu
+    LK23    Nuvara Ĕliya                   -> Nuwara Eliya
+    LK72    Pŏḷŏnnaruva                    -> Polonnaruwa
+    LK62    Puttalama                      -> Puttalam
+    LK91    Ratnapura                      -> Ratnapura
+    LK53    Trikuṇāmalaya                  -> Trincomalee
+    LK44    Vavuniyāva                     -> Vavuniya
+
+[4] All 25 districts match between GeoJSON and dataset: OK
+
+[5] Geometry validity check:
+    All 25 geometries are valid: OK
+
+[6] Building 25x25 binary adjacency matrix (criterion: intersection.length > 0.0)...
+    Adjacent pairs (shared edge, length > 0): 58
+
+[7] Adjacency matrix validation:
+    Shape: (25, 25)  (expected (25, 25)): OK
+    Symmetric: True
+    Diagonal sum (self-loops): 0  (expected 0): OK
+    Connected nodes: 25/25
+    Graph is fully connected: OK
+    Degree range: 2 - 9  mean=4.64
+
+    Per-district degrees:
+       0  Ampara                degree=6
+       1  Anuradhapura          degree=7
+       2  Badulla               degree=6
+       3  Batticaloa            degree=3
+       4  Colombo               degree=4
+       5  Galle                 degree=3
+       6  Gampaha               degree=4
+       7  Hambantota            degree=4
+       8  Jaffna                degree=2
+       9  Kalutara              degree=3
+      10  Kandy                 degree=5
+      11  Kegalle               degree=6
+      12  Kilinochchi           degree=3
+      13  Kurunegala            degree=6
+      14  Mannar                degree=5
+      15  Matale                degree=6
+      16  Matara                degree=3
+      17  Monaragala            degree=4
+      18  Mullaitivu            degree=5
+      19  Nuwara Eliya          degree=4
+      20  Polonnaruwa           degree=5
+      21  Puttalam              degree=4
+      22  Ratnapura             degree=9
+      23  Trincomalee           degree=5
+      24  Vavuniya              degree=4
+
+    All 58 adjacent pairs:
+      Ampara <-> Badulla
+      Ampara <-> Batticaloa
+      Ampara <-> Hambantota
+      Ampara <-> Matale
+      Ampara <-> Monaragala
+      Ampara <-> Polonnaruwa
+      Anuradhapura <-> Kurunegala
+      Anuradhapura <-> Mannar
+      Anuradhapura <-> Matale
+      Anuradhapura <-> Polonnaruwa
+      Anuradhapura <-> Puttalam
+      Anuradhapura <-> Trincomalee
+      Anuradhapura <-> Vavuniya
+      Badulla <-> Kandy
+      Badulla <-> Matale
+      Badulla <-> Monaragala
+      Badulla <-> Nuwara Eliya
+      Badulla <-> Ratnapura
+      Batticaloa <-> Polonnaruwa
+      Batticaloa <-> Trincomalee
+      Colombo <-> Gampaha
+      Colombo <-> Kalutara
+      Colombo <-> Kegalle
+      Colombo <-> Ratnapura
+      Galle <-> Kalutara
+      Galle <-> Matara
+      Galle <-> Ratnapura
+      Gampaha <-> Kegalle
+      Gampaha <-> Kurunegala
+      Gampaha <-> Puttalam
+      Hambantota <-> Matara
+      Hambantota <-> Monaragala
+      Hambantota <-> Ratnapura
+      Jaffna <-> Kilinochchi
+      Jaffna <-> Mullaitivu
+      Kalutara <-> Ratnapura
+      Kandy <-> Kegalle
+      Kandy <-> Kurunegala
+      Kandy <-> Matale
+      Kandy <-> Nuwara Eliya
+      Kegalle <-> Kurunegala
+      Kegalle <-> Nuwara Eliya
+      Kegalle <-> Ratnapura
+      Kilinochchi <-> Mannar
+      Kilinochchi <-> Mullaitivu
+      Kurunegala <-> Matale
+      Kurunegala <-> Puttalam
+      Mannar <-> Mullaitivu
+      Mannar <-> Puttalam
+      Mannar <-> Vavuniya
+      Matale <-> Polonnaruwa
+      Matara <-> Ratnapura
+      Monaragala <-> Ratnapura
+      Mullaitivu <-> Trincomalee
+      Mullaitivu <-> Vavuniya
+      Nuwara Eliya <-> Ratnapura
+      Polonnaruwa <-> Trincomalee
+      Trincomalee <-> Vavuniya
+
+[8] Normalised adjacency (Kipf & Welling D^-0.5 (A+I) D^-0.5):
+    Shape: (25, 25)
+    Value range: [0.0000, 0.3333]
+    Symmetric: True
+
+[9] Saved artifacts:
+    adjacency_binary.npy   shape=(25, 25)  dtype=int8
+    adjacency_norm.npy     shape=(25, 25)  dtype=float32

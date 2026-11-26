@@ -8,6 +8,8 @@ from modules.overview import render_overview
 from modules.district_surveillance import render_district_surveillance
 from modules.temporal_analysis import render_temporal_analysis
 from modules.climate_analysis import render_climate_analysis
+from modules.forecasting import render_forecasting
+from modules.spatial_explainability import render_spatial_explainability
 # ==================================================
 # 1. PAGE CONFIGURATION
 # ==================================================
@@ -272,31 +274,19 @@ elif page == "Climate Analysis":
 
 elif page == "Forecasting":
 
-    st.header("Forecasting and Model Evaluation")
-
-    st.info(
-        "Baseline and STGCN predictions will be added "
-        "after model training and evaluation."
-    )
-
-    st.markdown(
-        """
-        **Planned evaluation metrics**
-
-        - Mean Absolute Error (MAE)
-        - Root Mean Squared Error (RMSE)
-        - Comparison with a seasonal-naive baseline
-        """
+    render_forecasting(
+        filtered=filtered,
+        start_year=start_year,
+        end_year=end_year,
     )
 
 
 elif page == "Spatial Graph & Explainability":
 
-    st.header("Spatial Graph and Explainability")
-
-    st.info(
-        "This page will display the district adjacency graph, "
-        "district connectivity and model interpretation results."
+    render_spatial_explainability(
+        filtered=filtered,
+        start_year=start_year,
+        end_year=end_year,
     )
 
 

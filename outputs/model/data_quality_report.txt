@@ -1,0 +1,74 @@
+============================================================
+DATA PREPARATION — leptospirosis_2008_2024.csv
+============================================================
+
+[1] Loaded CSV: 5100 rows x 15 columns
+[2] Required columns present: ['Cases', 'District', 'Month', 'Precipitation_mm', 'Soil_Moisture_0_7cm', 'Temp_Max_C', 'Temp_Min_C', 'Year']
+[3] Date range: 2008-01-01 -> 2024-12-01
+
+[4] Districts found: 25
+     0  Ampara
+     1  Anuradhapura
+     2  Badulla
+     3  Batticaloa
+     4  Colombo
+     5  Galle
+     6  Gampaha
+     7  Hambantota
+     8  Jaffna
+     9  Kalutara
+    10  Kandy
+    11  Kegalle
+    12  Kilinochchi
+    13  Kurunegala
+    14  Mannar
+    15  Matale
+    16  Matara
+    17  Monaragala
+    18  Mullaitivu
+    19  Nuwara Eliya
+    20  Polonnaruwa
+    21  Puttalam
+    22  Ratnapura
+    23  Trincomalee
+    24  Vavuniya
+
+[5] Monthly index: 204 periods (2008-01-01 -> 2024-12-01)
+
+[6] Duplicate (District, Year, Month) rows: 0
+
+[7] Null counts per feature column:
+    Cases                         : 0
+    Precipitation_mm              : 0
+    Temp_Min_C                    : 0
+    Temp_Max_C                    : 0
+    Soil_Moisture_0_7cm           : 0
+
+[8] Negative case counts: 0
+    Zero-case records (genuine observations): 662
+
+[9] Checking coverage (every district x every month)...
+    Coverage: complete — no missing district-month cells.
+
+[10] Building feature matrices...
+    feature_matrix shape: (204, 25, 5)  (months=204, districts=25, features=5)
+    case_matrix shape: (204, 25)
+
+[11] Chronological split (inclusive month indices):
+    train: indices   0-167  |  2008-01-01 -> 2021-12-01  (168 months)
+    val  : indices 168-191  |  2022-01-01 -> 2023-12-01  (24 months)
+    test : indices 192-203  |  2024-01-01 -> 2024-12-01  (12 months)
+    No temporal overlap between splits: OK
+
+[12] Case statistics per split (all districts combined):
+    train: n= 4,200  mean=16.5  std=28.4  min=0  max=745  zeros=608
+    val  : n=   600  mean=28.1  std=56.0  min=0  max=859  zeros=33
+    test : n=   300  mean=45.0  std=58.7  min=0  max=542  zeros=21
+
+[13] Saving artifacts to D:\Research\Implementation\outputs\model
+    district_order.json  (25 districts)
+    feature_matrix.npy   shape=(204, 25, 5)
+    case_matrix.npy      shape=(204, 25)
+    date_index.csv       204 rows
+    split_indices.json
+    feature_names.json   ['Cases', 'Precipitation_mm', 'Temp_Min_C', 'Temp_Max_C', 'Soil_Moisture_0_7cm']

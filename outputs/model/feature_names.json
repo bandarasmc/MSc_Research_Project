@@ -1,0 +1,9 @@
+{
+  "features": [
+    "Cases",
+    "Precipitation_mm",
+    "Temp_Min_C",
+    "Temp_Max_C",
+    "Soil_Moisture_0_7cm"
+  ]
+}
