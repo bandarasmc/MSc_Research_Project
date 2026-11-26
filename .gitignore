@@ -1,0 +1,26 @@
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.env
+
+# Streamlit and notebook
+.streamlit/secrets.toml
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+
+# Generated model artifacts
+outputs/model_artifacts/
+*.pt
+*.pth
+*.pkl
+*.joblib
+
+# OS
+.DS_Store
+Thumbs.db
+
+.cache.sqlite
